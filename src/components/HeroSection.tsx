@@ -148,7 +148,7 @@ const HeroSection: React.FC = () => {
           </div>
 
           {/* Right side content */}
-          <div className='hidden lg:flex flex-col justify-between h-full'>
+          <div className=' lg:flex flex-col justify-between h-full'>
             {/* Stats */}
             <div className='grid grid-cols-1 sm:grid-cols-3 gap-8'>
               <Stat
