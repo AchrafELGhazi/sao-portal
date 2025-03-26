@@ -7,6 +7,8 @@ import EventsPage from './pages/EventsPage';
 import ResourcesPage from './pages/ResourcesPage';
 import ContactPage from './pages/ContactPage';
 import GalleryPage from './pages/GalleryPage';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfUse from './pages/TermsOfUse';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
             <Route path='/resources' element={<ResourcesPage />} />
             <Route path='/contact' element={<ContactPage />} />
             <Route path='/gallery' element={<GalleryPage />} />
+            <Route path='/privacy-policy' element={<PrivacyPolicy />} />
+            <Route path='/terms' element={<TermsOfUse />} />
           </Routes>
         </main>
         <Footer />

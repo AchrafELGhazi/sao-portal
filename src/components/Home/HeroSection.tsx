@@ -78,7 +78,9 @@ const HeroSection: React.FC = () => {
           alt='Al Akhawayn University campus'
           className='w-full h-full object-cover mix-blend-overlay opacity-50'
         />
+        {/* Updated gradients - side and bottom */}
         <div className='absolute inset-0 bg-gradient-to-r from-black/10 to-black/30' />
+        <div className='absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/70' />
       </div>
 
       {/* Content */}
@@ -136,7 +138,7 @@ const HeroSection: React.FC = () => {
                   <button
                     key={index}
                     className='group flex items-center gap-2 px-4 py-2 bg-gray-800/50 hover:bg-orange-500/10 
-                       text-gray-300 hover:text-orange-500 rounded-full transition-all duration-300'
+                      text-gray-300 hover:text-orange-500 rounded-full transition-all duration-300'
                   >
                     {tag.icon}
                     <span>{tag.text}</span>
