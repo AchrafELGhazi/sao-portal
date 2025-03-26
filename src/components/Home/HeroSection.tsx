@@ -78,9 +78,13 @@ const HeroSection: React.FC = () => {
           alt='Al Akhawayn University campus'
           className='w-full h-full object-cover mix-blend-overlay opacity-50'
         />
-        {/* Updated gradients - side and bottom */}
-        <div className='absolute inset-0 bg-gradient-to-r from-black/10 to-black/30' />
-        <div className='absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/70' />
+        {/* Updated gradients - side gradient */}
+        <div className='absolute inset-0 bg-gradient-to-r from-black/10 to-black/10' />
+
+        {/* Improved bottom gradient - more subtle and layered for smooth transition */}
+        <div className='absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50' />
+        <div className='absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/80 to-transparent' />
+        <div className='absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-black/0' />
       </div>
 
       {/* Content */}
