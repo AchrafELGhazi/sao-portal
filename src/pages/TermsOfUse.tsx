@@ -1,11 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import {
   ArrowLeft,
   FileText,
   Shield,
   Lock,
   Eye,
-  Bell,
   HelpCircle,
   Gavel,
   AlertTriangle,
