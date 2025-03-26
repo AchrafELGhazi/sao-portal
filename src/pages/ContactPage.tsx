@@ -509,7 +509,6 @@ const StaffCard: React.FC<StaffCardProps> = ({
   role,
   email,
   phone,
-  avatar,
 }) => (
   <div className='bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700/50 hover:border-orange-500/30 transition-all duration-300 group'>
     <div className='flex flex-col sm:flex-row sm:items-center'>

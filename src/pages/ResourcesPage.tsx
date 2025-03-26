@@ -9,7 +9,6 @@ import {
   ExternalLink,
   Calendar,
   Users,
-  DollarSign,
   HelpCircle,
   Mail,
   Image,
