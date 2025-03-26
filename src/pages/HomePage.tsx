@@ -3,7 +3,7 @@ import HeroSection from '@/components/Home/HeroSection';
 import StatsSection from '@/components/Home/StatsSection';
 import EventsSection from '@/components/Home/EventsSection';
 import ClubsSection from '@/components/Home/ClubsSection';
-import GallerySection from '@/components/Home/GallerySection';
+// import GallerySection from '@/components/Home/GallerySection';
 import CallToActionSection from '@/components/Home/CallToActionSection';
 import SaoTeamSection from '@/components/Home/SaoTeamSection';
 
