@@ -23,7 +23,7 @@ const HomePage: React.FC = () => {
       <ClubsSection />
 
       {/* Gallery Section */}
-      <GallerySection />
+      {/* <GallerySection /> */}
 
       <SaoTeamSection />
 
