@@ -9,6 +9,7 @@ import ContactPage from './pages/ContactPage';
 import GalleryPage from './pages/GalleryPage';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfUse from './pages/TermsOfUse';
+import SaoTeamPage from './pages/SaoTeamPagee';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path='/gallery' element={<GalleryPage />} />
             <Route path='/privacy-policy' element={<PrivacyPolicy />} />
             <Route path='/terms' element={<TermsOfUse />} />
+            <Route path='/sao-team' element={<SaoTeamPage />} />
           </Routes>
         </main>
         <Footer />

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Users, ArrowRight, ChevronRight, Flag } from 'lucide-react';
+import { Users, ArrowRight, ChevronRight } from 'lucide-react';
 
 type ClubCardProps = {
   name: string;

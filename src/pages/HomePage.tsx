@@ -5,6 +5,7 @@ import EventsSection from '@/components/Home/EventsSection';
 import ClubsSection from '@/components/Home/ClubsSection';
 import GallerySection from '@/components/Home/GallerySection';
 import CallToActionSection from '@/components/Home/CallToActionSection';
+import SaoTeamSection from '@/components/Home/SaoTeamSection';
 
 const HomePage: React.FC = () => {
   return (
@@ -23,6 +24,8 @@ const HomePage: React.FC = () => {
 
       {/* Gallery Section */}
       <GallerySection />
+
+      <SaoTeamSection />
 
       {/* Call to Action Section */}
       <CallToActionSection />
