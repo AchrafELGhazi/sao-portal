@@ -1,11 +1,5 @@
 import { Link } from 'react-router-dom';
-import {
-  Facebook,
-  Instagram,
-  Twitter,
-  Phone,
-  ChevronRight,
-} from 'lucide-react';
+import { Instagram, Phone, ChevronRight, Youtube, Music } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -44,25 +38,28 @@ const Footer = () => {
               </p>
               <div className='flex space-x-4'>
                 <a
-                  href='#'
+                  href='https://www.tiktok.com/@saoaui'
+                  target='_blank'
                   className='flex items-center justify-center w-10 h-10 rounded-full bg-white/5 hover:bg-orange-500/20 
                 border border-white/10 hover:border-orange-500/30 transition-all duration-300'
                 >
-                  <Facebook size={18} className='text-orange-500' />
+                  <Music size={18} className='text-orange-500' />
                 </a>
                 <a
-                  href='#'
+                  href='https://www.instagram.com/sao_aui/'
+                  target='_blank'
                   className='flex items-center justify-center w-10 h-10 rounded-full bg-white/5 hover:bg-orange-500/20 
                 border border-white/10 hover:border-orange-500/30 transition-all duration-300'
                 >
                   <Instagram size={18} className='text-orange-500' />
                 </a>
                 <a
-                  href='#'
+                  href='https://www.youtube.com/channel/UCbiKwNxW2Y3y4BUj7BvZNYg'
+                  target='_blank'
                   className='flex items-center justify-center w-10 h-10 rounded-full bg-white/5 hover:bg-orange-500/20 
                 border border-white/10 hover:border-orange-500/30 transition-all duration-300'
                 >
-                  <Twitter size={18} className='text-orange-500' />
+                  <Youtube size={18} className='text-orange-500' />
                 </a>
               </div>
             </div>
