@@ -10,10 +10,12 @@ import GalleryPage from './pages/GalleryPage';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfUse from './pages/TermsOfUse';
 import SaoTeamPage from './pages/SaoTeamPagee';
+import ScrollToTop from './utils/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className='flex flex-col min-h-screen bg-gradient-to-br from-[#0F0F1A] via-[#1A1A2F] to-[#2A2A3F]'>
         <Header />
         <main className='flex-grow '>
