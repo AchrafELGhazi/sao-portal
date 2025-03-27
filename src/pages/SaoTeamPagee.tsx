@@ -81,11 +81,9 @@ const SaoTeamPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Search and filters section */}
       <section className='py-10 bg-gray-900/80 backdrop-blur-sm border-y border-gray-800'>
         <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='flex flex-col md:flex-row md:items-center gap-6'>
-            {/* Search */}
             <div className='relative flex-grow max-w-2xl'>
               <div className='absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none'>
                 <Search className='w-5 h-5 text-gray-400' />
@@ -107,7 +105,6 @@ const SaoTeamPage: React.FC = () => {
               )}
             </div>
 
-            {/* Filters */}
             <div className='flex flex-wrap gap-3'>
               <div className='inline-flex items-center border border-gray-700 rounded-full overflow-hidden'>
                 <button
@@ -179,15 +176,12 @@ const SaoTeamPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Timeline section */}
       <section className='py-16'>
         <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
           {filteredTeams.length > 0 ? (
             <div ref={timelineRef} className='relative'>
-              {/* Center line */}
               <div className='absolute left-0 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-orange-500 via-orange-500/50 to-orange-500/20'></div>
 
-              {/* Timeline entries */}
               <div className='space-y-16'>
                 {filteredTeams.map((team, index) => (
                   <TimelineEntry
