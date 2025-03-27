@@ -1,6 +1,6 @@
 import ContactForm from '@/components/contact/ContactForm';
 import ContactHeader from '@/components/contact/ContactHeader';
-import FAQSection from '@/components/contact/FaqSection';
+import FAQSection from '@/components/contact/FAQSection';
 import StaffSection from '@/components/contact/StaffSection';
 import React from 'react';
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import CompactStaffCard from './CompactstaffCard';
 import OfficeHours from './OfficeHours';
+import CompactStaffCard from './CompactStaffCard';
 
 
 const StaffSection: React.FC = () => {
