@@ -80,16 +80,7 @@
                     onFocus={() => setFocusedField('name')}
                     onBlur={() => setFocusedField(null)}
                   />
-                  <label
-                    htmlFor='name'
-                    className={`absolute text-gray-400 transition-all duration-300 ${
-                      focusedField === 'name' || formData.name
-                        ? 'transform -translate-y-6 translate-x-4 text-sm text-orange-500'
-                        : 'left-12 top-4'
-                    }`}
-                  >
-                    {focusedField === 'name' || formData.name ? 'Your Name' : ''}
-                  </label>
+                
                 </div>
 
                 {/* Email field */}
@@ -115,18 +106,7 @@
                     onFocus={() => setFocusedField('email')}
                     onBlur={() => setFocusedField(null)}
                   />
-                  <label
-                    htmlFor='email'
-                    className={`absolute text-gray-400 transition-all duration-300 ${
-                      focusedField === 'email' || formData.email
-                        ? 'transform -translate-y-6 translate-x-4 text-sm text-orange-500'
-                        : 'left-12 top-4'
-                    }`}
-                  >
-                    {focusedField === 'email' || formData.email
-                      ? 'Your Email'
-                      : ''}
-                  </label>
+                  
                 </div>
               </div>
 
@@ -153,18 +133,7 @@
                   onFocus={() => setFocusedField('subject')}
                   onBlur={() => setFocusedField(null)}
                 />
-                <label
-                  htmlFor='subject'
-                  className={`absolute text-gray-400 transition-all duration-300 ${
-                    focusedField === 'subject' || formData.subject
-                      ? 'transform -translate-y-6 translate-x-4 text-sm text-orange-500'
-                      : 'left-12 top-4'
-                  }`}
-                >
-                  {focusedField === 'subject' || formData.subject
-                    ? 'Subject'
-                    : ''}
-                </label>
+             
               </div>
 
               {/* Message field */}
@@ -190,18 +159,7 @@
                   onFocus={() => setFocusedField('message')}
                   onBlur={() => setFocusedField(null)}
                 ></textarea>
-                <label
-                  htmlFor='message'
-                  className={`absolute text-gray-400 transition-all duration-300 ${
-                    focusedField === 'message' || formData.message
-                      ? 'transform -translate-y-6 translate-x-4 text-sm text-orange-500'
-                      : 'left-12 top-4'
-                  }`}
-                >
-                  {focusedField === 'message' || formData.message
-                    ? 'Your Message'
-                    : ''}
-                </label>
+               
               </div>
 
               {/* Submit button */}

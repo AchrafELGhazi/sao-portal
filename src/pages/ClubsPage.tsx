@@ -6,6 +6,7 @@ import { Club, ClubType } from '@/types/clubs';
 import { humanitarianClubsData } from '@/data/clubs/humanitarianClubsData';
 import { entertainmentClubsData } from '@/data/clubs/entertainmentClubsData';
 import { culturalClubsData } from '@/data/clubs/cluturalClubsData';
+import { ChevronRight } from 'lucide-react';
 
 // Mock data for educational clubs since it wasn't provided
 const educationalClubsData = [
@@ -73,7 +74,6 @@ export default function ClubsPage() {
     <div className='min-h-screen bg-gradient-to-br from-[#121225] to-[#1D1D35] pt-24 pb-16'>
       <div className='max-w-12xl pt-10 md:pt-20 mx-auto px-4 sm:px-16 lg:px-16'>
         {/* Header */}
-        {/* Modern Minimalist Header */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -87,11 +87,15 @@ export default function ClubsPage() {
           ></div>
 
           <div className='relative max-w-4xl mx-auto'>
-            {/* Simple horizontal line */}
-            <div
-              className='w-20 h-1 mx-auto mb-8 rounded-full'
-              style={{ backgroundColor: currentClubTypeColor }}
-            ></div>
+            {/* Center SAO Clubs badge */}
+            <div className='flex justify-center mb-4'>
+              <div className='inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/20 rounded-full px-3 py-1'>
+                <span className='text-orange-500 text-sm font-medium'>
+                  SAO Clubs
+                </span>
+                <ChevronRight className='w-4 h-4 text-orange-500' />
+              </div>
+            </div>
 
             {/* Clean modern title */}
             <h1 className='text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight text-center'>

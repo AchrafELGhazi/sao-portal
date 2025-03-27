@@ -3,7 +3,7 @@ import { Mail } from 'lucide-react';
 
 const OfficeHours: React.FC = () => {
   return (
-    <div className='mt-12'>
+    <div className='md:mt-[116px] mt-12'>
       <h3 className='text-2xl font-bold text-white mb-6 flex items-center'>
         <span className='inline-block w-4 h-1 bg-orange-500 mr-3'></span>
         Office Hours
@@ -13,7 +13,7 @@ const OfficeHours: React.FC = () => {
         <div className='grid grid-cols-2 divide-x divide-gray-700/50'>
           <div className='p-6'>
             <h4 className='text-white font-semibold mb-2'>Weekdays</h4>
-            <p className='text-gray-300'>9:00 AM - 5:00 PM</p>
+            <p className='text-gray-300'>09:00 AM - 11:00 PM</p>
           </div>
           <div className='p-6'>
             <h4 className='text-white font-semibold mb-2'>Weekends</h4>
