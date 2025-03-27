@@ -22,7 +22,6 @@ const AboutPage: React.FC = () => {
     saoTeam.length - 1
   );
 
-  // Auto-rotate testimonials
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveTestimonial(prev => (prev + 1) % testimonials.length);
