@@ -338,12 +338,10 @@ const TimelineEntry: React.FC<TimelineEntryProps> = ({
             </div>
           </div>
 
-          {/* Expanded content */}
           {expanded && (
             <div className='border-t border-gray-700/50'>
               {adminsToShow.length > 0 || leadersToShow.length > 0 ? (
                 <div className='p-6'>
-                  {/* Administrators */}
                   {adminsToShow.length > 0 && (
                     <div className='mb-6'>
                       <h4 className='text-white font-semibold mb-3 flex items-center gap-2'>
@@ -370,7 +368,6 @@ const TimelineEntry: React.FC<TimelineEntryProps> = ({
                     </div>
                   )}
 
-                  {/* Team Leaders */}
                   {leadersToShow.length > 0 && (
                     <div>
                       <h4 className='text-white font-semibold mb-3 flex items-center gap-2'>
