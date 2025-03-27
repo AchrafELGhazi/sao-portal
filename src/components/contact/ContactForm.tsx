@@ -1,173 +1,162 @@
-  import React, { useState, ChangeEvent, FormEvent } from 'react';
-  import { User, Mail, MessageSquare, Send } from 'lucide-react';
+import React, { useState, ChangeEvent, FormEvent } from 'react';
+import { User, Mail, MessageSquare, Send } from 'lucide-react';
 
-  const ContactForm: React.FC = () => {
-    const [formData, setFormData] = useState({
-      name: '',
-      email: '',
-      subject: '',
-      message: '',
-    });
+const ContactForm: React.FC = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
 
-    const [formState, setFormState] = useState<
-      'idle' | 'submitting' | 'success' | 'error'
-    >('idle');
-    const [focusedField, setFocusedField] = useState<string | null>(null);
+  const [formState, setFormState] = useState<
+    'idle' | 'submitting' | 'success' | 'error'
+  >('idle');
+  const [focusedField, setFocusedField] = useState<string | null>(null);
 
-    const handleChange = (
-      e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-    ) => {
-      setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-    const handleSubmit = (e: FormEvent) => {
-      e.preventDefault();
-      setFormState('submitting');
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    setFormState('submitting');
 
-      // Simulate form submission
+    setTimeout(() => {
+      console.log('Form submitted:', formData);
+      setFormState('success');
+
       setTimeout(() => {
-        console.log('Form submitted:', formData);
-        setFormState('success');
+        setFormState('idle');
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+        });
+      }, 3000);
+    }, 1500);
+  };
 
-        // Reset form after 3 seconds
-        setTimeout(() => {
-          setFormState('idle');
-          setFormData({
-            name: '',
-            email: '',
-            subject: '',
-            message: '',
-          });
-        }, 3000);
-      }, 1500);
-    };
+  return (
+    <div>
+      <h2 className='text-3xl font-bold text-white mb-8 flex items-center'>
+        <span className='inline-block w-6 h-1 bg-orange-500 mr-3'></span>
+        Send a Message
+      </h2>
 
-    return (
-      <div>
-        <h2 className='text-3xl font-bold text-white mb-8 flex items-center'>
-          <span className='inline-block w-6 h-1 bg-orange-500 mr-3'></span>
-          Send a Message
-        </h2>
+      <div className='bg-gray-800/30 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 relative overflow-hidden'>
+        {/* Decorative elements */}
+        <div className='absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent'></div>
+        <div className='absolute bottom-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full blur-[50px]'></div>
 
-        <div className='bg-gray-800/30 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 relative overflow-hidden'>
-          {/* Decorative elements */}
-          <div className='absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent'></div>
-          <div className='absolute bottom-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full blur-[50px]'></div>
-
-          <form onSubmit={handleSubmit} className='relative z-10'>
-            <div className='space-y-6'>
-              <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-                {/* Name field */}
-                <div className='relative'>
-                  <div
-                    className={`absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none transition-opacity duration-300 ${
-                      focusedField === 'name' || formData.name
-                        ? 'opacity-100'
-                        : 'opacity-50'
-                    }`}
-                  >
-                    <User className='w-5 h-5 text-orange-500' />
-                  </div>
-                  <input
-                    type='text'
-                    id='name'
-                    name='name'
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    placeholder='Your Name'
-                    className='w-full bg-gray-700/50 border border-gray-600 focus:border-orange-500 text-white rounded-xl pl-12 pr-4 py-4 focus:outline-none focus:ring-2 focus:ring-orange-500/50 transition-all duration-300'
-                    onFocus={() => setFocusedField('name')}
-                    onBlur={() => setFocusedField(null)}
-                  />
-                
-                </div>
-
-                {/* Email field */}
-                <div className='relative'>
-                  <div
-                    className={`absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none transition-opacity duration-300 ${
-                      focusedField === 'email' || formData.email
-                        ? 'opacity-100'
-                        : 'opacity-50'
-                    }`}
-                  >
-                    <Mail className='w-5 h-5 text-orange-500' />
-                  </div>
-                  <input
-                    type='email'
-                    id='email'
-                    name='email'
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    placeholder='Your Email'
-                    className='w-full bg-gray-700/50 border border-gray-600 focus:border-orange-500 text-white rounded-xl pl-12 pr-4 py-4 focus:outline-none focus:ring-2 focus:ring-orange-500/50 transition-all duration-300'
-                    onFocus={() => setFocusedField('email')}
-                    onBlur={() => setFocusedField(null)}
-                  />
-                  
-                </div>
-              </div>
-
-              {/* Subject field */}
+        <form onSubmit={handleSubmit} className='relative z-10'>
+          <div className='space-y-6'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
               <div className='relative'>
                 <div
                   className={`absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none transition-opacity duration-300 ${
-                    focusedField === 'subject' || formData.subject
+                    focusedField === 'name' || formData.name
                       ? 'opacity-100'
                       : 'opacity-50'
                   }`}
                 >
-                  <MessageSquare className='w-5 h-5 text-orange-500' />
+                  <User className='w-5 h-5 text-orange-500' />
                 </div>
                 <input
                   type='text'
-                  id='subject'
-                  name='subject'
-                  value={formData.subject}
+                  id='name'
+                  name='name'
+                  value={formData.name}
                   onChange={handleChange}
                   required
-                  placeholder='Subject'
+                  placeholder='Your Name'
                   className='w-full bg-gray-700/50 border border-gray-600 focus:border-orange-500 text-white rounded-xl pl-12 pr-4 py-4 focus:outline-none focus:ring-2 focus:ring-orange-500/50 transition-all duration-300'
-                  onFocus={() => setFocusedField('subject')}
+                  onFocus={() => setFocusedField('name')}
                   onBlur={() => setFocusedField(null)}
                 />
-             
               </div>
 
-              {/* Message field */}
               <div className='relative'>
                 <div
-                  className={`absolute top-4 left-0 pl-4 flex items-start pointer-events-none transition-opacity duration-300 ${
-                    focusedField === 'message' || formData.message
+                  className={`absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none transition-opacity duration-300 ${
+                    focusedField === 'email' || formData.email
                       ? 'opacity-100'
                       : 'opacity-50'
                   }`}
                 >
-                  <MessageSquare className='w-5 h-5 text-orange-500' />
+                  <Mail className='w-5 h-5 text-orange-500' />
                 </div>
-                <textarea
-                  id='message'
-                  name='message'
-                  value={formData.message}
+                <input
+                  type='email'
+                  id='email'
+                  name='email'
+                  value={formData.email}
                   onChange={handleChange}
                   required
-                  rows={5}
-                  placeholder='Your Message'
+                  placeholder='Your Email'
                   className='w-full bg-gray-700/50 border border-gray-600 focus:border-orange-500 text-white rounded-xl pl-12 pr-4 py-4 focus:outline-none focus:ring-2 focus:ring-orange-500/50 transition-all duration-300'
-                  onFocus={() => setFocusedField('message')}
+                  onFocus={() => setFocusedField('email')}
                   onBlur={() => setFocusedField(null)}
-                ></textarea>
-               
+                />
               </div>
+            </div>
 
-              {/* Submit button */}
-              <div className='flex justify-end'>
-                <button
-                  type='submit'
-                  disabled={formState === 'submitting'}
-                  className={`
+            <div className='relative'>
+              <div
+                className={`absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none transition-opacity duration-300 ${
+                  focusedField === 'subject' || formData.subject
+                    ? 'opacity-100'
+                    : 'opacity-50'
+                }`}
+              >
+                <MessageSquare className='w-5 h-5 text-orange-500' />
+              </div>
+              <input
+                type='text'
+                id='subject'
+                name='subject'
+                value={formData.subject}
+                onChange={handleChange}
+                required
+                placeholder='Subject'
+                className='w-full bg-gray-700/50 border border-gray-600 focus:border-orange-500 text-white rounded-xl pl-12 pr-4 py-4 focus:outline-none focus:ring-2 focus:ring-orange-500/50 transition-all duration-300'
+                onFocus={() => setFocusedField('subject')}
+                onBlur={() => setFocusedField(null)}
+              />
+            </div>
+
+            <div className='relative'>
+              <div
+                className={`absolute top-4 left-0 pl-4 flex items-start pointer-events-none transition-opacity duration-300 ${
+                  focusedField === 'message' || formData.message
+                    ? 'opacity-100'
+                    : 'opacity-50'
+                }`}
+              >
+                <MessageSquare className='w-5 h-5 text-orange-500' />
+              </div>
+              <textarea
+                id='message'
+                name='message'
+                value={formData.message}
+                onChange={handleChange}
+                required
+                rows={5}
+                placeholder='Your Message'
+                className='w-full bg-gray-700/50 border border-gray-600 focus:border-orange-500 text-white rounded-xl pl-12 pr-4 py-4 focus:outline-none focus:ring-2 focus:ring-orange-500/50 transition-all duration-300'
+                onFocus={() => setFocusedField('message')}
+                onBlur={() => setFocusedField(null)}
+              ></textarea>
+            </div>
+
+            <div className='flex justify-end'>
+              <button
+                type='submit'
+                disabled={formState === 'submitting'}
+                className={`
                     group relative overflow-hidden rounded-full px-8 py-4 
                     ${
                       formState === 'success'
@@ -178,64 +167,63 @@
                     } 
                     text-white transition-all duration-300 flex items-center gap-2
                   `}
-                >
-                  {/* Background pulse effect */}
-                  <span className='absolute inset-0 bg-white/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-500'></span>
+              >
+                <span className='absolute inset-0 bg-white/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-500'></span>
 
-                  {formState === 'submitting' ? (
-                    <>
-                      <div className='h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent'></div>
-                      <span>Sending...</span>
-                    </>
-                  ) : formState === 'success' ? (
-                    <>
-                      <svg
-                        className='w-5 h-5'
-                        fill='none'
-                        stroke='currentColor'
-                        viewBox='0 0 24 24'
-                        xmlns='http://www.w3.org/2000/svg'
-                      >
-                        <path
-                          strokeLinecap='round'
-                          strokeLinejoin='round'
-                          strokeWidth='2'
-                          d='M5 13l4 4L19 7'
-                        ></path>
-                      </svg>
-                      <span>Message Sent!</span>
-                    </>
-                  ) : formState === 'error' ? (
-                    <>
-                      <svg
-                        className='w-5 h-5'
-                        fill='none'
-                        stroke='currentColor'
-                        viewBox='0 0 24 24'
-                        xmlns='http://www.w3.org/2000/svg'
-                      >
-                        <path
-                          strokeLinecap='round'
-                          strokeLinejoin='round'
-                          strokeWidth='2'
-                          d='M6 18L18 6M6 6l12 12'
-                        ></path>
-                      </svg>
-                      <span>Error. Try Again</span>
-                    </>
-                  ) : (
-                    <>
-                      <Send className='w-5 h-5' />
-                      <span>Send Message</span>
-                    </>
-                  )}
-                </button>
-              </div>
+                {formState === 'submitting' ? (
+                  <>
+                    <div className='h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent'></div>
+                    <span>Sending...</span>
+                  </>
+                ) : formState === 'success' ? (
+                  <>
+                    <svg
+                      className='w-5 h-5'
+                      fill='none'
+                      stroke='currentColor'
+                      viewBox='0 0 24 24'
+                      xmlns='http://www.w3.org/2000/svg'
+                    >
+                      <path
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                        strokeWidth='2'
+                        d='M5 13l4 4L19 7'
+                      ></path>
+                    </svg>
+                    <span>Message Sent!</span>
+                  </>
+                ) : formState === 'error' ? (
+                  <>
+                    <svg
+                      className='w-5 h-5'
+                      fill='none'
+                      stroke='currentColor'
+                      viewBox='0 0 24 24'
+                      xmlns='http://www.w3.org/2000/svg'
+                    >
+                      <path
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                        strokeWidth='2'
+                        d='M6 18L18 6M6 6l12 12'
+                      ></path>
+                    </svg>
+                    <span>Error. Try Again</span>
+                  </>
+                ) : (
+                  <>
+                    <Send className='w-5 h-5' />
+                    <span>Send Message</span>
+                  </>
+                )}
+              </button>
             </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
-    );
-  };
+    </div>
+  );
+};
 
-  export default ContactForm;
+export default ContactForm;
