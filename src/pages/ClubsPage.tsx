@@ -8,9 +8,7 @@ import { entertainmentClubsData } from '@/data/clubs/entertainmentClubsData';
 import { culturalClubsData } from '@/data/clubs/cluturalClubsData';
 import { ChevronRight } from 'lucide-react';
 
-// Mock data for educational clubs since it wasn't provided
 const educationalClubsData = [
-  // Add some placeholder data or leave empty
   {
     clubName: 'IEEE',
     boardMembers: {
@@ -80,14 +78,12 @@ export default function ClubsPage() {
           transition={{ duration: 0.6 }}
           className='relative z-10 mb-16 px-4'
         >
-          {/* Subtle background accent */}
           <div
             className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50%] h-40 rounded-full blur-[100px] opacity-20'
             style={{ backgroundColor: currentClubTypeColor }}
           ></div>
 
           <div className='relative max-w-4xl mx-auto'>
-            {/* Center SAO Clubs badge */}
             <div className='flex justify-center mb-4'>
               <div className='inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/20 rounded-full px-3 py-1'>
                 <span className='text-orange-500 text-sm font-medium'>
@@ -97,19 +93,16 @@ export default function ClubsPage() {
               </div>
             </div>
 
-            {/* Clean modern title */}
             <h1 className='text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight text-center'>
               Explore Our{' '}
               <span style={{ color: currentClubTypeColor }}>Student Clubs</span>
             </h1>
 
-            {/* Clean subtitle */}
             <p className='text-lg md:text-xl text-white/70 max-w-2xl mx-auto text-center font-light'>
               Discover the diverse range of student-led organizations that make
               our campus vibrant and engaging.
             </p>
 
-            {/* Optional: Simple icon indicator */}
             <div className='flex justify-center mt-10'>
               <motion.div
                 animate={{ y: [0, 5, 0] }}
@@ -137,16 +130,13 @@ export default function ClubsPage() {
           </div>
         </motion.div>
 
-        {/* Enhanced Club Type Selector */}
         <div className='mb-12 relative z-10'>
-          {/* Background decorative elements */}
           <div className='absolute -top-16 -left-20 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl'></div>
           <div className='absolute -top-10 right-10 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl'></div>
 
           <div className='relative bg-[#1A1A2F]/40 backdrop-blur-xl p-2 rounded-2xl border border-white/5 shadow-xl'>
             <div className='grid grid-cols-2 md:grid-cols-4 gap-3'>
               {clubTypes.map(type => {
-                // Custom icon for each club type
                 const getIcon = (id: any) => {
                   switch (id) {
                     case 'humanitarian':
@@ -236,7 +226,6 @@ export default function ClubsPage() {
                     }`}
                     style={isSelected ? { backgroundColor: type.color } : {}}
                   >
-                    {/* Gradient overlay for non-selected tabs on hover */}
                     {!isSelected && (
                       <motion.div
                         className='absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300'
@@ -247,7 +236,6 @@ export default function ClubsPage() {
                       />
                     )}
 
-                    {/* Glowing dot indicator */}
                     {isSelected && (
                       <motion.div
                         initial={{ scale: 0 }}
@@ -258,7 +246,6 @@ export default function ClubsPage() {
                     )}
 
                     <div className='flex flex-col items-center justify-center space-y-2 md:space-y-3 relative z-10'>
-                      {/* Icon */}
                       <div
                         className={`${
                           isSelected ? 'text-white' : 'text-white/70'
@@ -267,13 +254,11 @@ export default function ClubsPage() {
                         {getIcon(type.id)}
                       </div>
 
-                      {/* Text */}
                       <span className='text-sm md:text-base font-medium text-center'>
                         {type.name.replace(' Clubs', '')}
                       </span>
                     </div>
 
-                    {/* Bottom border indicator for selected tab */}
                     <motion.div
                       initial={{ width: 0 }}
                       animate={{ width: isSelected ? '100%' : 0 }}
@@ -290,12 +275,10 @@ export default function ClubsPage() {
               })}
             </div>
 
-            {/* Subtle pulse animation around selected tab */}
             <div className='absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-white/5 via-white/10 to-white/5 opacity-0 group-hover:opacity-100 animate-pulse pointer-events-none'></div>
           </div>
         </div>
 
-        {/* Main Content */}
         <AnimatePresence mode='wait'>
           {!selectedClub ? (
             <motion.div
