@@ -62,24 +62,20 @@ const HeroSection: React.FC = () => {
 
   return (
     <section className='relative min-h-screen pt-28 md:pt-24 flex items-center'>
-      {/* Background with gradient overlay */}
       <div className='absolute inset-0'>
         <img
           src='/a.webp'
           alt='Al Akhawayn University campus'
           className='w-full h-full object-cover mix-blend-overlay opacity-50'
         />
-        {/* Enhanced gradients for better text readability */}
         <div className='absolute inset-0 bg-gradient-to-r from-black/30 to-black/20' />
         <div className='absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/70' />
         <div className='absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/90 to-transparent' />
       </div>
 
-      {/* Content */}
       <div className='container mx-auto px-4 sm:px-6 lg:px-8 relative z-10'>
         <div className='grid lg:grid-cols-2 gap-8 md:gap-12 items-center'>
           <div className='space-y-4 md:space-y-6'>
-            {/* Tag */}
             <div className='inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/20 rounded-full px-3 py-1'>
               <span className='text-orange-500 text-xs sm:text-sm font-medium'>
                 Empowering Students
@@ -87,7 +83,6 @@ const HeroSection: React.FC = () => {
               <ChevronRight className='w-4 h-4 text-orange-500' />
             </div>
 
-            {/* Heading */}
             <div>
               <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2 leading-tight'>
                 Student Activities Office
@@ -114,7 +109,6 @@ const HeroSection: React.FC = () => {
               growth, learning, and meaningful connections.
             </p>
 
-            {/* CTA Buttons */}
             <div className='flex flex-wrap gap-3 md:gap-4 pt-2'>
               <Link
                 to='/contact'
@@ -131,7 +125,6 @@ const HeroSection: React.FC = () => {
               </Link>
             </div>
 
-            {/* Tags Section */}
             <div className='pt-4 border-t border-gray-700/50'>
               <div className='flex flex-wrap gap-2 sm:gap-3'>
                 {tags.map((tag, index) => (
@@ -149,9 +142,7 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right side content */}
           <div className='hidden lg:flex flex-col justify-between h-full'>
-            {/* Stats */}
             <div className='grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8'>
               <Stat
                 icon={<Users className='w-6 h-6 text-orange-500' />}
@@ -170,12 +161,10 @@ const HeroSection: React.FC = () => {
               />
             </div>
 
-            {/* Decorative element */}
             <div className='relative mt-12'>
               <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-orange-500/20 rounded-full blur-[80px]' />
 
-              {/* Mission badges */}
-              <div className='relative flex justify-center gap-4'>
+              <div className=' relative flex justify-center gap-4'>
                 <Badge icon='🎓' label='Education' />
                 <Badge icon='🤝' label='Community' />
                 <Badge icon='🌟' label='Leadership' />
@@ -184,7 +173,6 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Mobile Stats (only visible on smaller screens) */}
           <div className='flex lg:hidden mt-4'>
             <div className='grid grid-cols-3 gap-4 w-full'>
               <StatMobile
@@ -207,7 +195,6 @@ const HeroSection: React.FC = () => {
         </div>
       </div>
 
-      {/* Add font import in the page */}
       <style>
         @import
         url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
@@ -226,9 +213,8 @@ const Stat: React.FC<StatProps> = ({ icon, number, label }) => (
   </div>
 );
 
-// More compact stat component for mobile view
 const StatMobile: React.FC<StatProps> = ({ icon, number, label }) => (
-  <div className='flex flex-col items-center text-center space-y-1 bg-white/5 rounded-lg p-3'>
+  <div className='flex flex-col items-center text-center space-y-1 bg-white/5 rounded-xl p-3'>
     <div className='bg-white/10 rounded-full p-2 mb-1'>{icon}</div>
     <div className='text-lg font-bold text-white'>{number}</div>
     <div className='text-gray-400 text-xs'>{label}</div>
