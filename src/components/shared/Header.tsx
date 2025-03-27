@@ -44,7 +44,6 @@ const Header = () => {
     >
       <div className='px-6 py-3'>
         <div className='flex justify-between items-center'>
-          {/* Logo Section */}
           <Link to='/' className='flex items-center gap-2 group'>
             <div className='w-10 h-10 rounded-full overflow-hidden border-2 border-orange-500/50 group-hover:border-orange-500 transition-all duration-300'>
               <img
@@ -55,7 +54,6 @@ const Header = () => {
             </div>
           </Link>
 
-          {/* Navigation Links */}
           <nav className='hidden md:flex items-center'>
             <div className='flex space-x-1 px-4 py-1.5 rounded-full bg-white/5'>
               <NavLink to='/'>Home</NavLink>
@@ -67,7 +65,6 @@ const Header = () => {
             </div>
           </nav>
 
-          {/* Social Links */}
           <div className='hidden md:flex items-center gap-2'>
             <SocialLink
               href="mailto:sao@aui.ma"
@@ -79,7 +76,6 @@ const Header = () => {
             />
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             className='md:hidden text-white/90 hover:text-white transition duration-300'
             onClick={toggleMenu}
@@ -90,7 +86,6 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isMenuOpen && (
         <nav className='md:hidden bg-black/95 backdrop-blur-md py-4 px-4 shadow-lg absolute top-full left-0 right-0 mt-2 rounded-2xl border border-white/10'>
           <div className='flex flex-col space-y-2'>
