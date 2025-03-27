@@ -23,9 +23,11 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
         viewport={{ once: true }}
         className='max-w-5xl mx-auto'
       >
-        <Badge className='bg-white/10 text-[#fd5f00] mb-4 py-1.5 text-sm font-medium border border-[#fd5f00]/30'>
-          Student Success Stories
-        </Badge>
+        <div className='flex justify-center mb-4'>
+          <Badge className='bg-white/10 rounded-full text-[#fd5f00] py-1.5 px-4 text-sm font-medium border border-[#fd5f00]/30'>
+            Student Success Stories
+          </Badge>
+        </div>
         <h2 className='text-4xl font-bold mb-12 text-white text-center'>
           What Our Alumni Say
         </h2>
