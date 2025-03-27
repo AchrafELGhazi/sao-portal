@@ -60,7 +60,7 @@ const Header = () => {
             <div className='flex space-x-1 px-4 py-1.5 rounded-full bg-white/5'>
               <NavLink to='/'>Home</NavLink>
               <NavLink to='/about'>About</NavLink>
-              <NavLink to='/events'>Events</NavLink>
+              <NavLink to='/clubss'>Clubs</NavLink>
               <NavLink to='/resources'>Resources</NavLink>
               <NavLink to='/contact'>Contact</NavLink>
               <NavLink to='/gallery'>Gallery</NavLink>
@@ -100,8 +100,8 @@ const Header = () => {
             <NavLink to='/about' onClick={toggleMenu}>
               About
             </NavLink>
-            <NavLink to='/events' onClick={toggleMenu}>
-              Events
+            <NavLink to='/clubs' onClick={toggleMenu}>
+              Clubs
             </NavLink>
             <NavLink to='/resources' onClick={toggleMenu}>
               Resources
