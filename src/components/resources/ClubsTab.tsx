@@ -28,28 +28,28 @@ const ClubsTab: React.FC = () => {
           <ResourceItem
             title='Club Creation/Renewal Form'
             description='Official form required for new clubs or annual renewal'
-            link='#'
+            link='/ClubsResources/SAO_CreationRenewal.pdf'
             icon={<FileText className='text-orange-500' />}
             fileType='PDF'
           />
           <ResourceItem
             title='Advisor Form'
             description='Must be completed by the faculty/staff advisor'
-            link='#'
+            link='/ClubsResources/SAO_AdvisorCommitmentForm.pdf'
             icon={<Users className='text-orange-500' />}
             fileType='PDF'
           />
           <ResourceItem
             title='Sample Action Plan'
             description="Template for creating your club's action plan"
-            link='#'
+            link='/ClubsResources/SAO_SampleActionPlan.xlsx'
             icon={<Calendar className='text-orange-500' />}
             fileType='XLSX'
           />
           <ResourceItem
             title='Sample Constitution'
             description="Template for creating your club's constitution"
-            link='#'
+            link='/ClubsResources/SAO_SampleConstitution.doc'
             icon={<FileText className='text-orange-500' />}
             fileType='DOCX'
           />
