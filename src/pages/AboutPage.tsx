@@ -8,7 +8,7 @@ import ImpactSection from '@/components/about/ImpactSection';
 import TimelineSection from '@/components/about/TimelineSection';
 import TeamSection from '@/components/about/TeamSection';
 import TestimonialsSection from '@/components/about/TestimonialsSection';
-import CTASection from '@/components/about/CTASection';
+// import CTASection from '@/components/about/CTASection';
 import { testimonials } from '@/data/testimonials';
 import { stats } from '@/data/stats';
 
@@ -22,6 +22,7 @@ const AboutPage: React.FC = () => {
     saoTeam.length - 1
   );
 
+  // Auto-rotate testimonials
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveTestimonial(prev => (prev + 1) % testimonials.length);
@@ -61,7 +62,7 @@ const AboutPage: React.FC = () => {
       />
 
       {/* CTA Section */}
-      <CTASection />
+      {/* <CTASection /> */}
     </div>
   );
 };
