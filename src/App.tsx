@@ -11,6 +11,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfUse from './pages/TermsOfUse';
 import SaoTeamPage from './pages/SaoTeamPagee';
 import ScrollToTop from './utils/ScrollToTop';
+import ClubsPage from './pages/ClubsPage';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path='/privacy-policy' element={<PrivacyPolicy />} />
             <Route path='/terms' element={<TermsOfUse />} />
             <Route path='/sao-team' element={<SaoTeamPage />} />
+            <Route path='/clubs' element={<ClubsPage />} />
           </Routes>
         </main>
         <Footer />
