@@ -239,7 +239,6 @@ const TimelineEntry: React.FC<TimelineEntryProps> = ({
 }) => {
   const [expanded, setExpanded] = useState(false);
 
-  // Filter members based on search term and filter type
   const filteredAdmins = team.admins.filter(admin =>
     admin.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -253,7 +252,6 @@ const TimelineEntry: React.FC<TimelineEntryProps> = ({
   const leadersToShow =
     filterType === 'admins' ? [] : searchTerm ? filteredLeaders : team.leaders;
 
-  // Highlight search matches
   const highlightText = (text: string) => {
     if (!searchTerm) return text;
 
@@ -276,8 +274,6 @@ const TimelineEntry: React.FC<TimelineEntryProps> = ({
     );
   };
 
-  // Determine if this entry should start expanded
-  // (if there's a search term and this entry has matches)
   React.useEffect(() => {
     if (
       searchTerm &&
@@ -296,17 +292,14 @@ const TimelineEntry: React.FC<TimelineEntryProps> = ({
 
   return (
     <div className={`relative ${hasMatchingMember ? '' : 'opacity-50'}`}>
-      {/* Timeline dot */}
       <div className='absolute left-0 md:left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full border-4 border-gray-900 bg-orange-500'></div>
 
-      {/* Content */}
       <div
         className={`md:w-5/12 ${
           isEven ? 'md:ml-auto md:pl-16' : 'md:mr-auto md:pr-16'
         }`}
       >
         <div className='bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-700/50 overflow-hidden'>
-          {/* Header */}
           <div
             className='p-6 cursor-pointer'
             onClick={() => setExpanded(!expanded)}
