@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
-import { Instagram, Phone, ChevronRight, Youtube, Music } from 'lucide-react';
+import { Instagram, Phone, ChevronRight, Youtube } from 'lucide-react';
+
+
 
 const Footer = () => {
   return (
@@ -41,7 +43,19 @@ const Footer = () => {
                   className='flex items-center justify-center w-10 h-10 rounded-full bg-white/5 hover:bg-orange-500/20 
                 border border-white/10 hover:border-orange-500/30 transition-all duration-300'
                 >
-                  <Music size={18} className='text-orange-500' />
+                  <svg
+                    width='18'
+                    height='18'
+                    viewBox='0 0 24 24'
+                    fill='none'
+                    xmlns='http://www.w3.org/2000/svg'
+                    className='text-orange-500'
+                  >
+                    <path
+                      d='M16.6 5.82C15.9165 5.03962 15.5397 4.03743 15.54 3H12.45V15.4C12.4247 15.9475 12.1952 16.466 11.809 16.8555C11.4228 17.2451 10.9061 17.4788 10.359 17.51C9.7506 17.5144 9.16324 17.2772 8.72756 16.8518C8.29187 16.4264 8.04055 15.8445 8.03 15.2362C8.01946 14.6278 8.25672 14.0404 8.68213 13.6048C9.10753 13.1691 9.68948 12.9177 10.2978 12.9072C10.5471 12.9072 10.7865 12.9458 11.01 13.0132V9.9C10.6275 9.83513 10.2371 9.80227 9.84601 9.80246C8.65917 9.8384 7.5377 10.3341 6.72972 11.1768C5.92174 12.0195 5.4723 13.1655 5.47998 14.3527C5.48766 15.5399 5.95175 16.6797 6.77173 17.5117C7.59172 18.3437 8.72068 18.8245 9.90743 18.8345C11.0942 18.8444 12.2313 18.3827 13.0648 17.5655C13.8983 16.7483 14.381 15.6185 14.39 14.4317V8.98C15.6296 9.93218 17.1261 10.4551 18.67 10.4917V7.39C18.6396 7.39344 17.44 7.12 16.6 5.82Z'
+                      fill='currentColor'
+                    />
+                  </svg>
                 </a>
                 <a
                   href='https://www.instagram.com/sao_aui/'
@@ -67,7 +81,7 @@ const Footer = () => {
                 Quick Links
               </h4>
               <ul className='space-y-3'>
-                {['About', 'Sao Team' ,'Clubs', 'Resources', 'Contact'].map(
+                {['About', 'Sao Team', 'Clubs', 'Resources', 'Contact'].map(
                   (item, index) => (
                     <li key={index}>
                       <Link
@@ -157,7 +171,6 @@ const Footer = () => {
                 >
                   Terms of Use
                 </Link>
-               
               </div>
             </div>
           </div>
