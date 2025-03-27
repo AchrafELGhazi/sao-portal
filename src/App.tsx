@@ -12,6 +12,7 @@ import TermsOfUse from './pages/TermsOfUse';
 import SaoTeamPage from './pages/SaoTeamPagee';
 import ScrollToTop from './utils/ScrollToTop';
 import ClubsPage from './pages/ClubsPage';
+import ScrollToTopButton from './utils/ScrollToTopButton';
 
 function App() {
   return (
@@ -33,7 +34,7 @@ function App() {
             <Route path='/clubs' element={<ClubsPage />} />
           </Routes>
         </main>
-        <Footer />
+        <Footer /> <ScrollToTopButton />
       </div>
     </Router>
   );
