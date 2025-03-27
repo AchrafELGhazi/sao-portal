@@ -15,7 +15,7 @@ const ImpactSection: React.FC = () => {
         viewport={{ once: true }}
         className='text-center mb-16'
       >
-        <Badge className='bg-white/10 text-[#fd5f00] mb-4 py-1.5 text-sm font-medium border border-[#fd5f00]/30'>
+        <Badge className='bg-white/10 rounded-full text-[#fd5f00] mb-4 py-1.5 text-sm font-medium border border-[#fd5f00]/30'>
           Our Impact
         </Badge>
         <h2 className='text-4xl md:text-5xl font-bold mb-6 text-white'>
