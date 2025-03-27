@@ -1,64 +1,72 @@
 import React from 'react';
-import { Mail, Phone } from 'lucide-react';
+import OfficeHours from './OfficeHours';
+import CompactStaffCard from './CompactStaffCard';
 
-interface CompactStaffCardProps {
-  name: string;
-  role: string;
-  email: string;
-  phone: string;
-  initial: string;
-}
 
-const CompactStaffCard: React.FC<CompactStaffCardProps> = ({
-  name,
-  role,
-  email,
-  phone,
-  initial,
-}) => {
+const StaffSection: React.FC = () => {
+  const staffMembers = [
+    {
+      name: 'Chaimae Akkati',
+      role: 'Manager',
+      email: 'c.akkati@aui.ma',
+      phone: '+212 535 86 3302',
+      initial: 'A',
+    },
+    {
+      name: 'Ayoub Bounasser',
+      role: 'Student Engagement Officer',
+      email: 'a.bounasser@aui.ma',
+      phone: '+212 535 86 3222',
+      initial: 'S',
+    },
+    {
+      name: 'Soumiya Bellabair',
+      role: 'Student Development Officer',
+      email: 's.bellabair@aui.ma',
+      phone: '+212 535 86 2303',
+      initial: 'L',
+    },
+    {
+      name: 'Loubna El Ayachi',
+      role: 'Events Coordinator',
+      email: 'l.elayachi@aui.ma',
+      phone: '+212 535 86 2767',
+      initial: 'D',
+    },
+    {
+      name: 'Driss Ouabbou',
+      role: 'Clubs Assistant',
+      email: 'd.ouabbou@aui.ma',
+      phone: '+212 535 86 2903',
+      initial: 'D',
+    },
+  ];
+
   return (
-    <div className='bg-gray-800/30 backdrop-blur-sm rounded-xl p-4 border border-gray-700/50 hover:border-orange-500/30 transition-all duration-300 group'>
-      <div className='flex items-center'>
-        {/* Avatar with initial */}
-        <div className='flex-shrink-0 mr-4'>
-          <div className='w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white font-semibold text-lg'>
-            {initial}
-          </div>
-        </div>
+    <div>
+      <h2 className='text-3xl font-bold text-white mb-8 flex items-center'>
+        <span className='inline-block w-6 h-1 bg-orange-500 mr-3'></span>
+        SAO Staff
+      </h2>
 
-        {/* Staff info */}
-        <div className='flex-1 min-w-0'>
-          <h4 className='text-white font-medium truncate'>{name}</h4>
-          <p className='text-orange-500 text-sm truncate'>{role}</p>
-        </div>
+      {/* Compact Staff Grid */}
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+        {staffMembers.map((staff, index) => (
+          <CompactStaffCard
+            key={index}
+            name={staff.name}
+            role={staff.role}
+            email={staff.email}
+            phone={staff.phone}
+            initial={staff.initial}
+          />
+        ))}
       </div>
 
-      {/* Contact details - revealed on hover/focus */}
-      <div className='mt-4 space-y-2 overflow-hidden transition-all duration-300'>
-        <a
-          href={`mailto:${email}`}
-          className='flex items-center text-gray-300 hover:text-orange-400 transition-colors text-sm group'
-        >
-          <Mail className='w-4 h-4 mr-2 text-orange-500' />
-          <span className='truncate'>{email}</span>
-        </a>
-        <a
-          href={`tel:${phone.replace(/\s+/g, '')}`}
-          className='flex items-center text-gray-300 hover:text-orange-400 transition-colors text-sm'
-        >
-          <Phone className='w-4 h-4 mr-2 text-orange-500' />
-          <span>{phone}</span>
-        </a>
-      </div>
-
-      {/* Schedule meeting button - shown on hover/focus */}
-      <div className='mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
-        <button className='w-full py-2 px-3 bg-gray-700/50 hover:bg-orange-500/20 text-white text-sm rounded-lg border border-gray-600 hover:border-orange-500/50 transition-all duration-300'>
-          Schedule Meeting
-        </button>
-      </div>
+      {/* Office Hours */}
+      <OfficeHours />
     </div>
   );
 };
 
-export default CompactStaffCard;
+export default StaffSection;
