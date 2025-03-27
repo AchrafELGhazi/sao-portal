@@ -14,7 +14,7 @@ const ContactHeader: React.FC = () => {
           <ChevronRight className='w-4 h-4 text-orange-500' />
         </div>
 
-        <h1 className='text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4'>
+        <h1 className='text-4xl md:text-5xl lg:text-5xl font-bold text-white mb-4'>
           Contact <span className='text-orange-500'>SAO</span>
         </h1>
         <p className='text-gray-300 text-lg max-w-2xl'>

@@ -7,7 +7,6 @@ import ClubsTab from '@/components/resources/ClubsTab';
 import LogosTab from '@/components/resources/LogosTab';
 import FAQsTab from '@/components/resources/FAQsTab';
 
-
 // Define tab types
 type TabType = 'documents' | 'events' | 'clubs' | 'logos' | 'faqs';
 
@@ -15,9 +14,9 @@ const ResourcesPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<TabType>('documents');
 
   return (
-    <div className='min-h-screen bg-gradient-to-b from-black via-gray-900 to-black'>
+    <div className='min-h-screen  pt-32   md:pt-40 file: bg-gradient-to-b from-black via-gray-900 to-black'>
       {/* Header section */}
-      <section className='relative pt-24 pb-16'>
+      <section className='relative    pb-16'>
         <div className='absolute inset-0'>
           <div className='absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black/80' />
         </div>
