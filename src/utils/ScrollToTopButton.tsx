@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Show button when page is scrolled down
   const toggleVisibility = () => {
     if (window.pageYOffset > 300) {
       setIsVisible(true);
@@ -13,17 +12,14 @@ const ScrollToTopButton = () => {
     }
   };
 
-  // Set the scroll event listener
   useEffect(() => {
     window.addEventListener('scroll', toggleVisibility);
 
-    // Clean up the listener on component unmount
     return () => {
       window.removeEventListener('scroll', toggleVisibility);
     };
   }, []);
 
-  // Function to scroll back to top
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -62,7 +58,6 @@ const ScrollToTopButton = () => {
               <path d='M18 15l-6-6-6 6' />
             </svg>
 
-            {/* Glow effect */}
             <div
               className='absolute inset-0 rounded-full opacity-0 group-hover:opacity-40 transition-opacity duration-300'
               style={{
