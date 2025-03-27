@@ -26,16 +26,7 @@ const HeroSection: React.FC = () => {
   const [isDeleting, setIsDeleting] = useState<boolean>(false);
   const [phraseIndex, setPhraseIndex] = useState<number>(0);
 
-  const phrases = [
-    'Your Gateway to Student Life Excellence',
-    'Empowering Student Leaders at AUI',
-    'Where Campus Life Comes Alive',
-    "Building Tomorrow's Leaders Today",
-    'Creating Memories at Al Akhawayn',
-    'Discover Your Potential at AUI',
-    'Your Home for Student Engagement',
-    'Fostering Growth and Development',
-  ];
+  const phrases = ['WE LEAD..WE LEARN..WE ARE A FAMILY '];
 
   const tags = [
     { icon: <Users className='w-4 h-4' />, text: 'Student Clubs' },
