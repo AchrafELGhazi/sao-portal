@@ -1,11 +1,9 @@
 import React from 'react';
-// import { Mail, Phone } from 'lucide-react';
 import CompactStaffCard from './CompactstaffCard';
 import OfficeHours from './OfficeHours';
 
 
 const StaffSection: React.FC = () => {
-  // Staff data
   const staffMembers = [
     {
       name: 'Chaimae Akkati',
