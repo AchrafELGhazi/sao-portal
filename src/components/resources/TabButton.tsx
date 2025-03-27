@@ -6,7 +6,7 @@ import {
   Users,
   Image,
   HelpCircle,
-  type LucideIcon,
+  
 } from 'lucide-react';
 
 interface TabButtonProps {

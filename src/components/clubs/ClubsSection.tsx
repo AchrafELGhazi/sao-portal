@@ -51,9 +51,16 @@ const ClubsSection: React.FC<ClubsSectionProps> = ({
   const getTotalMembers = (club: Club): number => {
     if (!club.boardMembers) return 0;
 
-    return Object.values(club.boardMembers).reduce((total, semester) => {
-      return total + Object.keys(semester).length;
-    }, 0);
+    return Object.entries(club.boardMembers).reduce(
+      (total, [_, semesterMembers]) => {
+        // Check if semesterMembers exists before calling Object.keys
+        if (semesterMembers) {
+          return total + Object.keys(semesterMembers).length;
+        }
+        return total;
+      },
+      0
+    );
   };
 
   // Get the most recent semester
@@ -101,7 +108,7 @@ const ClubsSection: React.FC<ClubsSectionProps> = ({
 
     if (latestSemester === 'N/A' || !club.events[latestSemester]) return [];
 
-    return club.events[latestSemester].slice(0, 3);
+    return club.events[latestSemester] || [];
   };
 
   return (
@@ -116,7 +123,9 @@ const ClubsSection: React.FC<ClubsSectionProps> = ({
         const totalMembers = getTotalMembers(club);
         const totalSemesters = getClubSemesters(club);
         const totalEvents = club.events
-          ? Object.values(club.events).flat().length
+          ? Object.values(club.events)
+              .filter(events => events !== undefined)
+              .flat().length
           : 0;
 
         return (
@@ -220,7 +229,7 @@ const ClubsSection: React.FC<ClubsSectionProps> = ({
 
                 {latestEvents.length > 0 ? (
                   <ul className='space-y-2'>
-                    {latestEvents.map((event, i) => (
+                    {latestEvents.slice(0, 3).map((event, i) => (
                       <li key={i} className='flex items-start gap-2.5'>
                         <div
                           className='w-2.5 h-2.5 rounded-full mt-1 flex-shrink-0'
@@ -323,4 +332,3 @@ const ClubsSection: React.FC<ClubsSectionProps> = ({
 };
 
 export default ClubsSection;
-  

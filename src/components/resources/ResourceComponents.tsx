@@ -5,12 +5,10 @@ import {
   File,
   ChevronDown,
   ChevronUp,
-  ChevronRight,
   Mail,
   Image,
 } from 'lucide-react';
 
-// Define types for props
 interface ResourceItemProps {
   title: string;
   description?: string;

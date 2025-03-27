@@ -63,7 +63,7 @@ const ClubDetails: React.FC<ClubDetailsProps> = ({
     return (
       !!club.events &&
       !!club.events[semester] &&
-      club.events[semester].length > 0
+      club.events[semester]?.length > 0
     );
   };
 
@@ -71,7 +71,7 @@ const ClubDetails: React.FC<ClubDetailsProps> = ({
     return (
       !!club.boardMembers &&
       !!club.boardMembers[semester] &&
-      Object.keys(club.boardMembers[semester]).length > 0
+      Object.keys(club.boardMembers[semester] || {}).length > 0
     );
   };
 
@@ -159,10 +159,13 @@ const ClubDetails: React.FC<ClubDetailsProps> = ({
               <h3 className='text-lg font-semibold text-white mb-4'>
                 Board Members
               </h3>
-              {hasBoardForSemester(selectedSemester) && club.boardMembers && (
-                <div className='space-y-3'>
-                  {Object.entries(club.boardMembers[selectedSemester]).map(
-                    ([position, name], index) => (
+              {hasBoardForSemester(selectedSemester) &&
+                club.boardMembers &&
+                club.boardMembers[selectedSemester] && (
+                  <div className='space-y-3'>
+                    {Object.entries(
+                      club.boardMembers[selectedSemester] || {}
+                    ).map(([position, name], index) => (
                       <div
                         key={index}
                         className='flex justify-between items-center'
@@ -170,12 +173,13 @@ const ClubDetails: React.FC<ClubDetailsProps> = ({
                         <div className='text-white/80 font-medium'>
                           {position}
                         </div>
-                        <div className='text-white'>{name}</div>
+                        <div className='text-white'>
+                          {name ? String(name) : 'N/A'}
+                        </div>
                       </div>
-                    )
-                  )}
-                </div>
-              )}{' '}
+                    ))}
+                  </div>
+                )}{' '}
               {!hasBoardForSemester(selectedSemester) && (
                 <p className='text-white/50 italic'>
                   No board members recorded for this semester.
@@ -191,21 +195,23 @@ const ClubDetails: React.FC<ClubDetailsProps> = ({
               className='bg-white/5 rounded-xl p-5 border border-white/10'
             >
               <h3 className='text-lg font-semibold text-white mb-4'>Events</h3>
-              {hasEventsForSemester(selectedSemester) && club.events && (
-                <ul className='space-y-3'>
-                  {club.events[selectedSemester].map(
-                    (event: string, index: number) => (
-                      <li key={index} className='flex items-start gap-3'>
-                        <div
-                          className='w-2 h-2 rounded-full mt-1.5'
-                          style={{ backgroundColor: primaryColor }}
-                        ></div>
-                        <span className='text-white/80'>{event}</span>
-                      </li>
-                    )
-                  )}
-                </ul>
-              )}{' '}
+              {hasEventsForSemester(selectedSemester) &&
+                club.events &&
+                club.events[selectedSemester] && (
+                  <ul className='space-y-3'>
+                    {(club.events[selectedSemester] || []).map(
+                      (event: string, index: number) => (
+                        <li key={index} className='flex items-start gap-3'>
+                          <div
+                            className='w-2 h-2 rounded-full mt-1.5'
+                            style={{ backgroundColor: primaryColor }}
+                          ></div>
+                          <span className='text-white/80'>{event}</span>
+                        </li>
+                      )
+                    )}
+                  </ul>
+                )}{' '}
               {!hasEventsForSemester(selectedSemester) && (
                 <p className='text-white/50 italic'>
                   No events recorded for this semester.

@@ -1,18 +1,17 @@
-// src/types/clubs.ts
 
 // For board member positions and their names
 export interface BoardMember {
-  [position: string]: string;
+  [position: string]: string | undefined;
 }
 
 // For semesters with their board members
 export interface BoardMembers {
-  [semester: string]: BoardMember;
+  [semester: string]: BoardMember | undefined;
 }
 
 // For events in a semester
 export interface SemesterEvents {
-  [semester: string]: string[];
+  [semester: string]: string[] | undefined;
 }
 
 // The main Club interface
