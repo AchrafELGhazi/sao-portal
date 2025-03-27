@@ -132,7 +132,7 @@ const GalleryPage: React.FC = () => {
         {/* Background Image with Overlay */}
         <div className='absolute inset-0'>
           <img
-            src={galleryImages[0]?.src || '/gallery/hero-image.webp'}
+            src={'/sao1.jpg'}
             alt='Gallery Hero'
             className='w-full h-full object-cover'
           />
@@ -427,4 +427,3 @@ const GalleryPage: React.FC = () => {
 };
 
 export default GalleryPage;
-  
