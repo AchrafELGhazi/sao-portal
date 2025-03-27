@@ -84,7 +84,7 @@ const ContactForm: React.FC = () => {
                   htmlFor='name'
                   className={`absolute text-gray-400 transition-all duration-300 ${
                     focusedField === 'name' || formData.name
-                      ? 'transform -translate-y-6 translate-x-4 scale-80 text-orange-500'
+                      ? 'transform -translate-y-6 translate-x-4 text-sm text-orange-500'
                       : 'left-12 top-4'
                   }`}
                 >
@@ -119,7 +119,7 @@ const ContactForm: React.FC = () => {
                   htmlFor='email'
                   className={`absolute text-gray-400 transition-all duration-300 ${
                     focusedField === 'email' || formData.email
-                      ? 'transform -translate-y-6 translate-x-4 scale-80 text-orange-500'
+                      ? 'transform -translate-y-6 translate-x-4 text-sm text-orange-500'
                       : 'left-12 top-4'
                   }`}
                 >
@@ -157,7 +157,7 @@ const ContactForm: React.FC = () => {
                 htmlFor='subject'
                 className={`absolute text-gray-400 transition-all duration-300 ${
                   focusedField === 'subject' || formData.subject
-                    ? 'transform -translate-y-6 translate-x-4 scale-80 text-orange-500'
+                    ? 'transform -translate-y-6 translate-x-4 text-sm text-orange-500'
                     : 'left-12 top-4'
                 }`}
               >
@@ -194,7 +194,7 @@ const ContactForm: React.FC = () => {
                 htmlFor='message'
                 className={`absolute text-gray-400 transition-all duration-300 ${
                   focusedField === 'message' || formData.message
-                    ? 'transform -translate-y-6 translate-x-4 scale-80 text-orange-500'
+                    ? 'transform -translate-y-6 translate-x-4 text-sm text-orange-500'
                     : 'left-12 top-4'
                 }`}
               >

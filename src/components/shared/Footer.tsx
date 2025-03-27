@@ -27,9 +27,11 @@ const Footer = () => {
             {/* Brand section */}
             <div className='w-full lg:w-1/4'>
               <div className='mb-6'>
-                <h3 className='text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-orange-300'>
-                  SAO AUI
-                </h3>
+                <img
+                  src='/sao-logo.png'
+                  alt='SAO Logo'
+                  className='h-32  -ml-3  md:-mt-6 w-auto object-contain'
+                />
                 <div className='h-1 w-12 bg-orange-500 mt-2 rounded-full' />
               </div>
               <p className='text-gray-400 mb-6'>
