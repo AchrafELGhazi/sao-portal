@@ -96,9 +96,10 @@ const HeroSection: React.FC = () => {
                 <span
                   className='text-orange-500 block text-xl sm:text-2xl md:text-3xl tracking-wider'
                   style={{
-                    fontFamily: 'Orbitron, sans-serif',
-                    letterSpacing: '0.08em',
+                    fontFamily: 'Montserrat, sans-serif',
+                    letterSpacing: '0.1em',
                     fontWeight: '500',
+                    textTransform: 'uppercase',
                   }}
                 >
                   {displayText}
@@ -209,7 +210,7 @@ const HeroSection: React.FC = () => {
       {/* Add font import in the page */}
       <style>
         @import
-        url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap');
+        url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
       </style>
     </section>
   );
