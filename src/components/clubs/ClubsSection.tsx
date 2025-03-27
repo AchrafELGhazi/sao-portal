@@ -83,19 +83,7 @@ const ClubsSection: React.FC<ClubsSectionProps> = ({
               </div>
             </div>
 
-            <div className='mt-5 border-t border-white/10 pt-4'>
-              <div className='text-sm text-white/70'>
-                <p>
-                  {club.boardMembers
-                    ? `Led by ${
-                        Object.values(club.boardMembers)
-                          .map((board: any) => board.President || '')
-                          .filter(Boolean)[0] || 'Various officers'
-                      } and team`
-                    : 'Club information'}
-                </p>
-              </div>
-            </div>
+           
 
             <motion.button
               className='mt-4 w-full py-2 rounded-lg text-sm font-medium text-white flex items-center justify-center gap-2'
