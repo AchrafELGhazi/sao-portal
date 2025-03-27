@@ -7,7 +7,7 @@ import React from 'react';
 
 const ContactPage: React.FC = () => {
   return (
-    <div className='min-h-screen pt-10 md:pt-20  md:px-5 bg-gradient-to-b from-black via-gray-900 to-black relative'>
+    <div className='min-h-screen pt-10 md:pt-20  md:px-5 bg-gradient-to-b from-[#121225] to-[#1D1D35] relative'>
       {/* Background elements */}
       <div className='absolute inset-0 overflow-hidden pointer-events-none'>
         <div className='absolute w-full h-full'>
