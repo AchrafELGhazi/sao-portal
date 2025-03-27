@@ -20,17 +20,13 @@ const SaoTeamPage: React.FC = () => {
   const [activeYear, setActiveYear] = useState<string>('all');
   const timelineRef = useRef<HTMLDivElement>(null);
 
-  // Get unique years from semesters
   const years = [...new Set(saoTeam.map(team => team.semester.split(' ')[1]))];
 
-  // Filter data based on search, filter type, and active year
   const filteredTeams = saoTeam.filter(team => {
-    // Year filter
     if (activeYear !== 'all' && !team.semester.includes(activeYear)) {
       return false;
     }
 
-    // Search term filter
     if (searchTerm) {
       const adminsMatch = team.admins.some(admin =>
         admin.toLowerCase().includes(searchTerm.toLowerCase())
