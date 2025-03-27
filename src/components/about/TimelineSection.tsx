@@ -14,7 +14,7 @@ const TimelineSection: React.FC = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <Badge className='bg-white/10 text-[#fd5f00] mb-4 py-1.5 text-sm font-medium border border-[#fd5f00]/30'>
+          <Badge className='bg-white/10 rounded-3xl text-[#fd5f00] mb-4 py-1.5 text-sm font-medium border border-[#fd5f00]/30'>
             Our Journey
           </Badge>
           <h2 className='text-4xl font-bold mb-6 text-white'>
@@ -26,8 +26,8 @@ const TimelineSection: React.FC = () => {
             development and engagement.
           </p>
           <div className='flex items-center gap-3 mb-6'>
-            <div className='w-12 h-12 rounded-lg bg-[#fd5f00]/10 flex items-center justify-center'>
-              <BookOpen className='w-6 h-6 text-[#fd5f00]' />
+            <div className='w-12 h-12 rounded-xl bg-[#fd5f00]/10 flex items-center justify-center'>
+              <BookOpen className='w-6 h-6  text-[#fd5f00]' />
             </div>
             <div>
               <div className='text-white font-medium'>

@@ -16,10 +16,10 @@ const Timeline: React.FC = () => {
           viewport={{ once: true, margin: '-100px' }}
           className='mb-12 relative'
         >
-          <div className='absolute left-[-18px] w-6 h-6 rounded-full bg-[#1A1A2F] border-2 border-[#fd5f00] flex items-center justify-center'>
+          <div className='absolute left-[-43px] w-6 h-6 rounded-full bg-[#1A1A2F] border-2 border-[#fd5f00] flex items-center justify-center'>
             <div className='w-2 h-2 rounded-full bg-[#fd5f00]'></div>
           </div>
-          <div className='bg-[#1A1A2F]/40 p-5 rounded-lg backdrop-blur-sm border border-white/5 hover:border-[#fd5f00]/20 transition-colors duration-300'>
+          <div className='bg-[#1A1A2F]/40 p-5 rounded-xl backdrop-blur-sm border border-white/5 hover:border-[#fd5f00]/20 transition-colors duration-300'>
             <div className='text-[#fd5f00] font-bold text-lg mb-1'>
               {event.year}
             </div>
