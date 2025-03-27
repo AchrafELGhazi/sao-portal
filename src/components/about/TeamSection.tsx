@@ -30,7 +30,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({
         viewport={{ once: true }}
         className='text-center mb-16'
       >
-        <Badge className='bg-white/10 text-[#fd5f00] mb-4 py-1.5 text-sm font-medium border border-[#fd5f00]/30'>
+        <Badge className='bg-white/10 text-[#fd5f00] mb-4 py-1.5 text-sm font-medium rounded-full border border-[#fd5f00]/30'>
           Our Team
         </Badge>
         <h2 className='text-4xl md:text-5xl font-bold mb-6 text-white'>
@@ -40,24 +40,6 @@ const TeamSection: React.FC<TeamSectionProps> = ({
           Our dynamic student team drives SAO initiatives and ensures student
           needs are at the heart of everything we do.
         </p>
-
-        {/* Semester Selector */}
-        <div className='mb-12'>
-          <div className='flex flex-wrap justify-center items-center gap-3'>
-            <span className='text-gray-300'>Select semester:</span>
-            <select
-              value={selectedSemesterIndex}
-              onChange={e => setSelectedSemesterIndex(parseInt(e.target.value))}
-              className='bg-[#1A1A2F] border border-white/10 text-white rounded-md px-4 py-2 focus:outline-none focus:ring-1 focus:ring-[#fd5f00]'
-            >
-              {teamData.map((team, index) => (
-                <option key={index} value={index}>
-                  {team.semester}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
       </motion.div>
 
       <Card className='bg-[#1A1A2F]/40 border-white/5 backdrop-blur-xl overflow-hidden rounded-xl mb-12'>
@@ -104,7 +86,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({
               <div className='mt-6 text-center'>
                 <button
                   onClick={() => setExpandedTeamView(!expandedTeamView)}
-                  className='bg-[#fd5f00]/10 hover:bg-[#fd5f00]/20 text-[#fd5f00] px-6 py-2 rounded-lg flex items-center gap-2 mx-auto transition-all duration-300'
+                  className='bg-[#fd5f00]/10 hover:bg-[#fd5f00]/20 text-[#fd5f00] px-6 py-2 rounded-full flex items-center gap-2 mx-auto transition-all duration-300'
                 >
                   {expandedTeamView
                     ? 'Show Less'
@@ -142,7 +124,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => setSelectedSemesterIndex(index)}
-              className={`px-3 py-2 rounded-md text-xs transition-all duration-300 ${
+              className={`px-3 py-2 rounded-xl text-xs transition-all whitespace-nowrap inline-flex flex-shrink-0 min-w-20 justify-center items-center duration-300 ${
                 selectedSemesterIndex === index
                   ? 'bg-[#fd5f00] text-white font-medium'
                   : 'bg-white/5 text-gray-400 hover:bg-white/10'
