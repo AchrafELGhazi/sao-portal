@@ -11,6 +11,8 @@ import { ResourceItem } from './ResourceComponents';
 
 const ClubsTab: React.FC = () => {
   const [embedFormVisible, setEmbedFormVisible] = useState<boolean>(false);
+  const formUrl =
+    'https://forms.office.com/Pages/ResponsePage.aspx?id=TOAlcMpwv0ire3OVTLhGreKnvvJXSbFAndMP7fFaXxpURUZUTlhaVFBRUzJYNUJWR1pZUU1HTzNEVi4u';
 
   return (
     <div>
@@ -62,43 +64,87 @@ const ClubsTab: React.FC = () => {
           Create a Club
         </h2>
         <p className='text-gray-300 mb-6'>
-          To create a new club at Al Akhawayn University, please fill out the
-          embedded form below or click the button to open it in a new window.
+          To create a new club at Al Akhawayn University, please use the form
+          below. You can either view it embedded on this page or open it in a
+          new window for the best experience.
         </p>
 
         <div className='flex flex-wrap gap-4 mb-6'>
-          <button
-            onClick={() => setEmbedFormVisible(!embedFormVisible)}
+          <a
+            href={formUrl}
+            target='_blank'
+            rel='noopener noreferrer'
             className='bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full transition duration-300 flex items-center gap-2'
           >
-            {embedFormVisible ? 'Hide Form' : 'Show Embedded Form'}
+            Open Form in New Window
+            <ExternalLink className='w-5 h-5' />
+          </a>
+
+          <button
+            onClick={() => setEmbedFormVisible(!embedFormVisible)}
+            className='bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-full transition duration-300 flex items-center gap-2'
+          >
+            {embedFormVisible ? 'Hide Form Preview' : 'Show Form Preview'}
             {embedFormVisible ? (
               <ChevronUp className='w-5 h-5' />
             ) : (
               <ChevronDown className='w-5 h-5' />
             )}
           </button>
-
-          <a
-            href='https://forms.office.com/Pages/ResponsePage.aspx?id=TOAlcMpwv0ire3OVTLhGreKnvvJXSbFAndMP7fFaXxpURUZUTlhaVFBRUzJYNUJWR1pZUU1HTzNEVi4u'
-            target='_blank'
-            rel='noopener noreferrer'
-            className='bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-full transition duration-300 flex items-center gap-2'
-          >
-            Open in New Window
-            <ExternalLink className='w-5 h-5' />
-          </a>
         </div>
 
         {embedFormVisible && (
-          <div className='rounded-xl overflow-hidden border border-gray-600 h-[600px]'>
-            <iframe
-              src='https://forms.office.com/Pages/ResponsePage.aspx?id=TOAlcMpwv0ire3OVTLhGreKnvvJXSbFAndMP7fFaXxpURUZUTlhaVFBRUzJYNUJWR1pZUU1HTzNEVi4u'
-              width='100%'
-              height='100%'
-              frameBorder='0'
-              title='Club Creation Form'
-            ></iframe>
+          <div className='space-y-4'>
+            <div className='rounded-xl overflow-hidden border border-gray-600'>
+              <div className='bg-gray-700 text-white p-3 flex justify-between items-center'>
+                <span>Microsoft Form Preview</span>
+                <a
+                  href={formUrl}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='text-orange-400 hover:text-orange-300 flex items-center gap-1'
+                >
+                  Open form <ExternalLink className='w-4 h-4' />
+                </a>
+              </div>
+              <div className='bg-white p-4 h-[500px] overflow-auto'>
+                <div className='flex flex-col items-center justify-center h-full text-center p-6'>
+                  <img
+                    src='/api/placeholder/200/100'
+                    alt='Microsoft Forms logo'
+                    className='mb-4 opacity-80'
+                  />
+                  <h3 className='text-xl font-bold mb-3 text-gray-800'>
+                    Club Creation Form
+                  </h3>
+                  <p className='text-gray-600 mb-6'>
+                    This form may not display correctly in the embedded preview
+                    due to Microsoft Forms' security restrictions.
+                  </p>
+                  <a
+                    href={formUrl}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full transition duration-300 inline-flex items-center gap-2'
+                  >
+                    Open in New Window for Best Experience
+                    <ExternalLink className='w-5 h-5' />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className='p-4 bg-blue-500/10 border border-blue-500/20 rounded-xl'>
+              <h3 className='text-white font-semibold mb-2 flex items-center'>
+                <ExternalLink className='w-4 h-4 mr-2 text-blue-400' />
+                Form Access Instructions
+              </h3>
+              <p className='text-gray-300'>
+                For the best experience, please click the "Open Form in New
+                Window" button above. Microsoft Forms often has limitations when
+                embedded directly on websites.
+              </p>
+            </div>
           </div>
         )}
 
