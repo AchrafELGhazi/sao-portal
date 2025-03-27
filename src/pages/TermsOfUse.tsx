@@ -20,7 +20,6 @@ const TermsOfUse = () => {
   const topRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Scroll to top when component mounts
     if (topRef.current) {
       topRef.current.scrollIntoView();
     }
@@ -169,7 +168,7 @@ By email: r.elmakroum@aui.ma`,
       ref={topRef}
       className='min-h-screen bg-gradient-to-b from-black to-gray-900 text-white'
     >
-      {/* Header Section with Background Effects */}
+      {/* Header Section with  Effects */}
       <div className='relative pt-20 overflow-hidden'>
         {/* Background Glows for Depth */}
         <div className='absolute inset-0 z-0'>
@@ -222,7 +221,6 @@ By email: r.elmakroum@aui.ma`,
             </div>
           </aside>
 
-          {/* Content Sections */}
           <main className='lg:w-3/4'>
             <div className='space-y-20'>
               {sections.map(section => (
@@ -231,7 +229,6 @@ By email: r.elmakroum@aui.ma`,
                   id={section.id}
                   className='scroll-mt-28'
                 >
-                  {/* Section Header */}
                   <div className='flex items-center mb-8 space-x-4'>
                     <div className='p-3 rounded-2xl bg-orange-500/10 border border-orange-500/20 shadow-lg shadow-orange-500/5'>
                       {section.icon}
@@ -241,7 +238,6 @@ By email: r.elmakroum@aui.ma`,
                     </h2>
                   </div>
 
-                  {/* Section Content */}
                   <div className='bg-white/5 backdrop-blur-sm border border-gray-800/50 rounded-2xl p-8 hover:border-orange-500/20 transition-all duration-500 shadow-xl shadow-black/20'>
                     <div className='prose prose-invert max-w-none'>
                       {section.content.split('\n\n').map((paragraph, idx) => (
