@@ -1,8 +1,13 @@
 import React from 'react';
-import { Calendar, Users, ChevronRight } from 'lucide-react';
+import { Calendar, Users, ChevronRight, ExternalLink } from 'lucide-react';
 import { ResourceItem } from './ResourceComponents';
 
 const EventsTab: React.FC = () => {
+  const preEventFormUrl =
+    'https://forms.office.com/pages/responsepage.aspx?id=TOAlcMpwv0ire3OVTLhGrXXYZjml-mpDrCoQdTU5saBUQ1NXUE0yMVFWSEszNjY0TFo2VFkwVk5HRS4u&route=shorturl';
+  const postEventFormUrl = 'https://forms.office.com/r/ZqXEfp5iyi';
+  const guestRequestFormPath = '/EventsResources/Guest-Request-Form.docx';
+
   return (
     <div className='bg-gray-800/30 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50'>
       <h2 className='text-2xl font-bold text-white mb-6 flex items-center'>
@@ -15,27 +20,62 @@ const EventsTab: React.FC = () => {
       </p>
 
       <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
-        <ResourceItem
-          title='Pre-event Form'
-          description='Complete this form at least 2 weeks before your event'
-          link='#'
-          icon={<Calendar className='text-orange-500' />}
-          fileType='PDF'
-        />
-        <ResourceItem
-          title='Post-event Form'
-          description='Submit within 3 days after your event'
-          link='#'
-          icon={<Calendar className='text-orange-500' />}
-          fileType='PDF'
-        />
-        <ResourceItem
-          title='Guest Request Form'
-          description='Required for inviting external guests to campus'
-          link='#'
-          icon={<Users className='text-orange-500' />}
-          fileType='PDF'
-        />
+        <div className='bg-gray-700/30 backdrop-blur-sm rounded-xl p-5 border border-gray-600/50'>
+          <h3 className='text-white font-medium mb-2 flex items-center'>
+            <Calendar className='text-orange-500 mr-2' />
+            Pre-event Form
+          </h3>
+          <p className='text-gray-300 text-sm mb-3'>
+            Complete this form at least 2 weeks before your event
+          </p>
+          <a
+            href={preEventFormUrl}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-full transition duration-300 flex items-center gap-2 text-sm inline-block mt-2'
+          >
+            Open Form
+            <ExternalLink className='w-4 h-4' />
+          </a>
+        </div>
+
+        <div className='bg-gray-700/30 backdrop-blur-sm rounded-xl p-5 border border-gray-600/50'>
+          <h3 className='text-white font-medium mb-2 flex items-center'>
+            <Calendar className='text-orange-500 mr-2' />
+            Post-event Form
+          </h3>
+          <p className='text-gray-300 text-sm mb-3'>
+            Submit within 3 days after your event
+          </p>
+          <a
+            href={postEventFormUrl}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-full transition duration-300 flex items-center gap-2 text-sm inline-block mt-2'
+          >
+            Open Form
+            <ExternalLink className='w-4 h-4' />
+          </a>
+        </div>
+
+        <div className='bg-gray-700/30 backdrop-blur-sm rounded-xl p-5 border border-gray-600/50'>
+          <h3 className='text-white font-medium mb-2 flex items-center'>
+            <Users className='text-orange-500 mr-2' />
+            Guest Request Form
+          </h3>
+          <p className='text-gray-300 text-sm mb-3'>
+            Required for inviting external guests to campus
+          </p>
+          <a
+            href={guestRequestFormPath}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-full transition duration-300 flex items-center gap-2 text-sm inline-block mt-2'
+          >
+            Download DOCX File
+            <ExternalLink className='w-4 h-4' />
+          </a>
+        </div>
       </div>
 
       <div className='mt-8'>
