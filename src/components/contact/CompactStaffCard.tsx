@@ -18,14 +18,12 @@ const CompactStaffCard: React.FC<CompactStaffCardProps> = ({
 }) => (
   <div className='bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700/50 hover:border-orange-500/30 transition-all duration-300 group'>
     <div className='p-4 flex items-start'>
-      {/* Avatar */}
       <div className='relative flex-shrink-0'>
         <div className='w-12 h-12 rounded-full bg-orange-500/20 flex items-center justify-center mr-3'>
           <span className='text-orange-500 font-bold text-lg'>{initial}</span>
         </div>
       </div>
 
-      {/* Info */}
       <div className='flex-grow'>
         <h3 className='text-white text-base font-semibold group-hover:text-orange-500 transition-colors'>
           {name}
