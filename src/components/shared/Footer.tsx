@@ -72,7 +72,7 @@ const Footer = () => {
                 Quick Links
               </h4>
               <ul className='space-y-3'>
-                {['About', 'Events', 'Clubs', 'Resources', 'Contact'].map(
+                {['About', 'Sao Team' ,'Clubs', 'Resources', 'Contact'].map(
                   (item, index) => (
                     <li key={index}>
                       <Link
