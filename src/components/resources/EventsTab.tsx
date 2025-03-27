@@ -1,6 +1,5 @@
 import React from 'react';
 import { Calendar, Users, ChevronRight, ExternalLink } from 'lucide-react';
-import { ResourceItem } from './ResourceComponents';
 
 const EventsTab: React.FC = () => {
   const preEventFormUrl =
@@ -32,7 +31,7 @@ const EventsTab: React.FC = () => {
             href={preEventFormUrl}
             target='_blank'
             rel='noopener noreferrer'
-            className='bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-full transition duration-300 flex items-center gap-2 text-sm inline-block mt-2'
+            className='bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-full transition duration-300 flex items-center gap-2 text-sm  mt-2'
           >
             Open Form
             <ExternalLink className='w-4 h-4' />
@@ -51,7 +50,7 @@ const EventsTab: React.FC = () => {
             href={postEventFormUrl}
             target='_blank'
             rel='noopener noreferrer'
-            className='bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-full transition duration-300 flex items-center gap-2 text-sm inline-block mt-2'
+            className='bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-full transition duration-300 flex items-center gap-2 text-sm mt-2'
           >
             Open Form
             <ExternalLink className='w-4 h-4' />
@@ -70,7 +69,7 @@ const EventsTab: React.FC = () => {
             href={guestRequestFormPath}
             target='_blank'
             rel='noopener noreferrer'
-            className='bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-full transition duration-300 flex items-center gap-2 text-sm inline-block mt-2'
+            className='bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-full transition duration-300 flex items-center gap-2 text-sm  mt-2'
           >
             Download DOCX File
             <ExternalLink className='w-4 h-4' />
