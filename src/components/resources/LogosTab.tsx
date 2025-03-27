@@ -1,8 +1,42 @@
 import React from 'react';
 import { Image, Download, ChevronRight } from 'lucide-react';
-import { EmailContact, LogoPreview } from './ResourceComponents';
+import { EmailContact } from './ResourceComponents';
+
+// Create a new LogoPreview component that uses actual images
+interface LogoPreviewProps {
+  title: string;
+  imageNumber: number;
+}
+
+const LogoPreview: React.FC<LogoPreviewProps> = ({ title, imageNumber }) => (
+  <div className='bg-gray-700/30 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-600/50 flex flex-col'>
+    <div className='aspect-square bg-gray-800 flex items-center justify-center p-6'>
+      <div className='w-full h-full bg-gray-700/50 rounded-xl flex items-center justify-center'>
+        <img
+          src={`/SAO Logos/${imageNumber}.png`}
+          alt={title}
+          className='max-w-full max-h-full object-contain'
+        />
+      </div>
+    </div>
+    {/* <div className='p-4'>
+      <h3 className='text-white font-medium text-center'>{title}</h3>
+    </div> */}
+  </div>
+);
 
 const LogosTab: React.FC = () => {
+  const logoVariants = [
+    { title: 'SAO Primary Logo', imageNumber: 1 },
+    { title: 'SAO Vertical Logo', imageNumber: 2 },
+    { title: 'SAO Horizontal Logo', imageNumber: 3 },
+    { title: 'SAO Icon Only', imageNumber: 4 },
+    { title: 'SAO Full Color', imageNumber: 5 },
+    { title: 'SAO White', imageNumber: 6 },
+    { title: 'SAO Black', imageNumber: 7 },
+    { title: 'SAO Grayscale', imageNumber: 8 },
+  ];
+
   return (
     <div className='bg-gray-800/30 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50'>
       <h2 className='text-2xl font-bold text-white mb-6 flex items-center'>
@@ -16,19 +50,19 @@ const LogosTab: React.FC = () => {
       </p>
 
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-8'>
-        <LogoPreview title='SAO Primary Logo' />
-        <LogoPreview title='SAO Vertical Logo' />
-        <LogoPreview title='SAO Horizontal Logo' />
-        <LogoPreview title='SAO Icon Only' />
-        <LogoPreview title='SAO Full Color' />
-        <LogoPreview title='SAO White' />
-        <LogoPreview title='SAO Black' />
-        <LogoPreview title='SAO Grayscale' />
+        {logoVariants.map((logo, index) => (
+          <LogoPreview
+            key={index}
+            title={logo.title}
+            imageNumber={logo.imageNumber}
+          />
+        ))}
       </div>
 
       <div className='flex justify-center'>
         <a
-          href='#'
+          href='/SAO Logos.zip'
+          download
           className='bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full transition duration-300 flex items-center gap-2'
         >
           <Download className='w-5 h-5' />
