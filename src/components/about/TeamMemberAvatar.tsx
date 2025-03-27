@@ -10,7 +10,6 @@ interface TeamMemberAvatarProps {
 const TeamMemberAvatar: React.FC<TeamMemberAvatarProps> = ({
   name,
   role,
-  colorIndex,
 }) => {
   const initials = name
     .split(' ')
