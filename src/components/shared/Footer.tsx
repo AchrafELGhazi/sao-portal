@@ -5,13 +5,11 @@ const Footer = () => {
   return (
     <div className=''>
       <footer className='relative md:px-10 bg-gradient-to-b from-black to-gray-900 text-white py-7 pt-16 overflow-hidden'>
-        {/* Background elements */}
         <div className='absolute inset-0 overflow-hidden'>
           <div className='absolute -bottom-40 -right-40 w-96 h-96 bg-orange-500/10 rounded-full blur-[100px]' />
           <div className='absolute top-20 -left-20 w-72 h-72 bg-orange-500/5 rounded-full blur-[80px]' />
         </div>
 
-        {/* Grid lines */}
         <div className='absolute inset-0 flex justify-between'>
           {[...Array(6)].map((_, i) => (
             <div
@@ -22,9 +20,7 @@ const Footer = () => {
         </div>
 
         <div className='container mx-auto px-4 relative z-10'>
-          {/* Top section */}
           <div className='flex flex-col lg:flex-row justify-between gap-12 mb-12'>
-            {/* Brand section */}
             <div className='w-full lg:w-1/4'>
               <div className='mb-6'>
                 <img
@@ -66,7 +62,6 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Quick links */}
             <div className='w-full lg:w-1/4'>
               <h4 className='text-xl font-semibold mb-5 text-white'>
                 Quick Links
@@ -88,7 +83,6 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Staff section */}
             <div className='w-full lg:w-2/4'>
               <h4 className='text-xl font-semibold mb-5 text-white'>
                 Staff & Extensions
@@ -144,7 +138,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Bottom section */}
           <div className='pt-8 border-t border-gray-800'>
             <div className='flex flex-col md:flex-row justify-between items-center'>
               <p className='text-gray-500 text-sm mb-4 md:mb-0'>
@@ -164,12 +157,7 @@ const Footer = () => {
                 >
                   Terms of Use
                 </Link>
-                {/* <Link
-                  to='/accessibility'
-                  className='text-sm text-gray-500 hover:text-orange-500 transition-colors duration-300'
-                >
-                  Accessibility
-                </Link> */}
+               
               </div>
             </div>
           </div>
