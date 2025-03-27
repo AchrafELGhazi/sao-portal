@@ -1,4 +1,4 @@
-const culturalClubsData = [
+export const culturalClubsData = [
   {
     "clubName": "Islamic Art and Culture",
     "boardMembers": {

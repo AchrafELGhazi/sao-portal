@@ -1,4 +1,4 @@
-const humanitarianClubsData = [
+export const humanitarianClubsData = [
   {
     "clubName": "Yo Soy Joy",
     "boardMembers": {
