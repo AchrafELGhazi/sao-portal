@@ -168,16 +168,13 @@ By email: r.elmakroum@aui.ma`,
       ref={topRef}
       className='min-h-screen bg-gradient-to-b from-black to-gray-900 text-white'
     >
-      {/* Header Section with  Effects */}
       <div className='relative pt-20 overflow-hidden'>
-        {/* Background Glows for Depth */}
         <div className='absolute inset-0 z-0'>
           <div className='absolute -top-40 -right-40 w-96 h-96 bg-orange-500/10 rounded-full blur-[120px]' />
           <div className='absolute top-20 -left-20 w-72 h-72 bg-orange-500/5 rounded-full blur-[100px]' />
           <div className='absolute inset-0 bg-black/40' />
         </div>
 
-        {/* Header Content */}
         <div className='container mx-auto px-6 sm:px-8 py-20 relative z-10'>
           <Link
             to='/'
@@ -197,10 +194,8 @@ By email: r.elmakroum@aui.ma`,
         </div>
       </div>
 
-      {/* Main Content Section */}
       <div className='container mx-auto px-6 sm:px-8 py-12'>
         <div className='flex flex-col lg:flex-row gap-12'>
-          {/* Sidebar Navigation */}
           <aside className='lg:w-1/4'>
             <div className='sticky top-32 bg-gray-900/50 backdrop-blur-lg border border-gray-800 rounded-2xl p-6 shadow-xl shadow-black/20'>
               <h3 className='text-lg font-medium mb-6 text-orange-500'>
