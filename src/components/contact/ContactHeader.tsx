@@ -11,7 +11,6 @@ const ContactHeader: React.FC = () => {
         transition={{ duration: 0.6 }}
         className='text-center max-w-3xl mx-auto'
       >
-        {/* Decorative element */}
         <div className='inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/20 rounded-full px-3 py-1 mb-4'>
           <span className='text-orange-500 text-sm font-medium'>
             Contact SAO
@@ -29,7 +28,6 @@ const ContactHeader: React.FC = () => {
           university experience.
         </p>
 
-        {/* Quick contact info */}
         <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mt-12'>
           <motion.div
             whileHover={{ y: -5, scale: 1.02 }}
