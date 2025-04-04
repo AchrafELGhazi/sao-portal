@@ -8,13 +8,13 @@ interface LogoPreviewProps {
   imageNumber: number;
 }
 
-const LogoPreview: React.FC<LogoPreviewProps> = ({ title, imageNumber }) => (
+const LogoPreview: React.FC<LogoPreviewProps> = ({ imageNumber }) => (
   <div className='bg-gray-700/30 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-600/50 flex flex-col'>
     <div className='aspect-square bg-gray-800 flex items-center justify-center p-6'>
       <div className='w-full h-full bg-gray-700/50 rounded-xl flex items-center justify-center'>
         <img
           src={`/SAO Logos/${imageNumber}.png`}
-          alt={title}
+          
           className='max-w-full max-h-full object-contain'
         />
       </div>
@@ -35,6 +35,10 @@ const LogosTab: React.FC = () => {
     { title: 'SAO White', imageNumber: 6 },
     { title: 'SAO Black', imageNumber: 7 },
     { title: 'SAO Grayscale', imageNumber: 8 },
+    { title: 'SAO Grayscale', imageNumber: 9},
+    { title: 'SAO Grayscale', imageNumber: 10 },
+    { title: 'SAO Grayscale', imageNumber: 11 },
+    { title: 'SAO Grayscale', imageNumber: 12},
   ];
 
   return (

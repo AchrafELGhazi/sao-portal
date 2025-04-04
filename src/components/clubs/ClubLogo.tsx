@@ -17,20 +17,7 @@ const ClubLogo: React.FC<ClubLogoProps> = ({ name, color, size = 'md' }) => {
 
   // Get first letter or acronym
   const getLogoText = (clubName: string): string => {
-    // Split by spaces to check if it's an acronym
-    const words = clubName.split(' ');
-
-    // If it's an acronym like "IEEE", "ACM", etc.
-    if (clubName.toUpperCase() === clubName && clubName.length <= 5) {
-      return clubName;
-    }
-
-    // If it has multiple words, use initials
-    if (words.length > 1) {
-      return words.map(word => word.charAt(0).toUpperCase()).join('');
-    }
-
-    // Otherwise, just use the first letter
+  
     return clubName.charAt(0).toUpperCase();
   };
 
